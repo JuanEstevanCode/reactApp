@@ -39,6 +39,10 @@ npm install bootstrap
 ```bash
 npm install SweetAlert2
 ```
+**React Router Dom**
+```bash
+npm i react-router-dom
+```
 
 ---
 
@@ -66,10 +70,18 @@ npm install SweetAlert2
 ├── src/
 │   ├── assets/               # Recursos estáticos (imágenes, íconos, etc.)
 │   ├── components/           # Componentes reutilizables
-│   ├── pages/               # Páginas completas (vistas o interfaces completas)
-|       ├── loginpage.jsk
-|       └── loginpage.css          
-│   ├── playground/           # Espacio para pruebas rápidas|       
+│   ├── pages/                # Páginas completas (vistas o interfaces completas)
+|       ├── ForgotPage/
+|       |         └──ForgotPage.jsx
+|       ├── LoginPage/
+|       |         └──LoginPage.jsx
+|       └── RegisterPage/
+|                 └──RegisterPage.jsx
+│   ├── playground/           # Espacio para pruebas rápidas|
+|       ├── HooksGeneral.jsx
+|       ├── loginpage.css
+|       ├── loginpage.jsx
+|       └── useState.jsx             
 │   ├── App.css               # Estilos globales de la app
 │   ├── App.js                # Componente raíz
 |   ├── index.css             # Estilos del index
@@ -85,8 +97,9 @@ npm install SweetAlert2
 
 | Nº  | Fecha       | Descripción / Entregable                              |
 |-----|-------------|-------------------------------------------------------|
-| 1   | 2025-08-15  | Creación del proyecto con Create-React-App                         |
+| 1   | 2025-08-15  | Creación del proyecto con Create-React-App             |
 | 2   | 2025-08-15  | Instalación y configuración de Bootstrap y SweetAlert2 |
+| 3   | 2025-08-21  | Instalación y creacion de las rutas                    |
 
 
 ---
