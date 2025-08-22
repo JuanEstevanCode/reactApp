@@ -1,12 +1,27 @@
-// import logo from './logo.svg';
-import LoginPage from "./pages/loginpage/loginpage";
-import UseStateContador from "./playground/useState/useState"
+import { BrowserRouter } from "react-router-dom";
+import Forgot from "./pages/ForgotPage/ForgotPage.jsx";
+import LoginPage from "./pages/LoginPage/LoginPage.jsx";
+import Register from "./pages/RegisterPage/RegisterPage.jsx";
+import Hooks from "./playground/HooksGeneral.jsx";
+import UseState from "./playground/useState.jsx";
+
+
+import { Route, Routes } from "react-router-dom";
+import './App.css';
+
 
 function App() {
   return (
-    <>
-      <UseStateContador />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot" element={<Forgot />} />
+        <Route path="/hooks" element={<Hooks />} />
+        <Route path="/UseState" element={<UseState />} />
+        
+      </Routes>
+    </BrowserRouter>
   );
 }
 
