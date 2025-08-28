@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Rutas públicas
@@ -16,11 +17,25 @@ import ProtectedRoute from './pages/components/ProtectedRoute';
 import DashboardPage from './pages/DashboardPage/DashboardPage';
 import ResetPasswordPage from './pages/ResetPasswordPage/ResetPasswordPage';
 import AuxiliaresPage from './pages/AuxiliaresPage/AuxiliaresPage';
+=======
+import { BrowserRouter } from "react-router-dom";
+import Forgot from "./pages/ForgotPage/ForgotPage.jsx";
+import LoginPage from "./pages/LoginPage/LoginPage.jsx";
+import Register from "./pages/RegisterPage/RegisterPage.jsx";
+import Hooks from "./playground/HooksGeneral.jsx";
+import UseState from "./playground/useState.jsx";
+
+
+import { Route, Routes } from "react-router-dom";
+import './App.css';
+
+>>>>>>> 6331fb5ee0aa14d6d8f1958002c3b0e18317183c
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+<<<<<<< HEAD
         {/* Rutas públicas */}
         <Route path="/" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
@@ -38,6 +53,14 @@ function App() {
         <Route path="/usestate" element={<UseStatePlay />} />
         <Route path="/useeffect" element={<UseEffectPlay />} />
         <Route path="/useref" element={<UseRefPlay />} />
+=======
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot" element={<Forgot />} />
+        <Route path="/hooks" element={<Hooks />} />
+        <Route path="/UseState" element={<UseState />} />
+        
+>>>>>>> 6331fb5ee0aa14d6d8f1958002c3b0e18317183c
       </Routes>
     </BrowserRouter>
   );
