@@ -2,8 +2,9 @@
 
 Este es un proyecto base en **React** creado con **Create React App**, que incluye:
 
-- [Bootstrap](https://getbootstrap.com/) para estilos rápidos y responsive.
 - [SweetAlert2](https://sweetalert2.github.io/) para alertas y confirmaciones atractivas.
+- [React Router DOM](https://reactrouter.com/) para navegación entre páginas.
+- [Firebase](https://firebase.google.com/) para autenticación, hosting y base de datos.
 
 ---
 
@@ -27,6 +28,7 @@ Este es un proyecto base en **React** creado con **Create React App**, que inclu
     npm start
     ```
 
+
 ---
 
 ##  Dependencias instaladas
@@ -43,6 +45,39 @@ npm install SweetAlert2
 ```bash
 npm i react-router-dom
 ```
+**Firebase**
+```bash
+npm i firebase
+```
+
+---
+
+## Despliegue en Firebase Hosting
+**Instalar CLI**
+```bash
+npm i -g firebase-tools
+```
+
+**Iniciar sesión**
+```bash
+firebase login
+```
+
+**Inicializar hosting**
+```bash
+firebase init
+```
+
+**Generar build**
+```bash
+npm run build
+```
+
+**Desplegar**
+```bash
+firebase deploy
+```
+
 
 ---
 
@@ -51,55 +86,82 @@ npm i react-router-dom
 | Tecnología              | Logo                                                                 | Descripción                                                                                   |
 |------------------------|----------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | **HTML5**              | ![HTML5](https://img.icons8.com/color/48/html-5--v1.png)              | Lenguaje de marcado usado para estructurar las páginas web.                                  |
-| **CSS3**               | ![CSS3](https://img.icons8.com/color/48/css3.png)                     | Hojas de estilo para personalizar la apariencia de la web.                                   |
-| **Bootstrap 5**        | ![Bootstrap](https://img.icons8.com/color/48/bootstrap.png)           | Framework CSS para facilitar el diseño responsive y atractivo.                               |
+| **CSS3**               | ![CSS3](https://img.icons8.com/color/48/css3.png)                     | Hojas           | Framework CSS para facilitar el diseño responsive y atractivo.                               |
 | **JavaScript**         | ![JS](https://img.icons8.com/color/48/javascript--v1.png)             | Lenguaje de programación para la lógica y la interactividad en la web.                       |
 | **React**              | ![React](https://img.icons8.com/color/48/react-native.png)            | Biblioteca de JavaScript para construir interfaces de usuario basadas en componentes.        |
-| **Create React App**   | ![CRA](https://img.icons8.com/?size=48&id=t9R7H4l3cOyb&format=png)     | Herramienta oficial para crear proyectos React con configuración inicial lista para usar.    |
-| **SweetAlert2**        | ![SweetAlert2](https://img.icons8.com/external-flat-icons-inmotus-design/48/external-alert-user-interface-flat-icons-inmotus-design.png) | Librería JS para mostrar alertas modernas, elegantes y personalizadas. |
 
 ---
 
 ##  Estructura del Proyecto
 
 ```plaintext
+
+📂 Estructura del Proyecto
+
 /
 ├── public/
-│   ├── index.html            # Plantilla HTML principal de la app
-│   └── favicon.ico           # Ícono de la aplicación
+│   ├── favicon.ico             # Ícono de la aplicación
+│   ├── index.html              # Plantilla HTML principal
+│   ├── logo192.png             # Logo versión 192px
+│   ├── logo512.png             # Logo versión 512px
+│   ├── manifest.json           # Configuración PWA (Progressive Web App)
+│   └── robots.txt              # Configuración para bots de indexación
+│
 ├── src/
-│   ├── assets/               # Recursos estáticos (imágenes, íconos, etc.)
-│   ├── components/           # Componentes reutilizables
-│   ├── pages/                # Páginas completas (vistas o interfaces completas)
-|       ├── ForgotPage/
-|       |         └──ForgotPage.jsx
-|       ├── LoginPage/
-|       |         └──LoginPage.jsx
-|       └── RegisterPage/
-|                 └──RegisterPage.jsx
-│   ├── playground/           # Espacio para pruebas rápidas|
-|       ├── HooksGeneral.jsx
-|       ├── loginpage.css
-|       ├── loginpage.jsx
-|       └── useState.jsx             
-│   ├── App.css               # Estilos globales de la app
-│   ├── App.js                # Componente raíz
-|   ├── index.css             # Estilos del index
-│   ├── index.js              # Punto de entrada principal
-├── package.json              # Configuración y dependencias del proyecto
-├── package-lock.json         # Bloqueo de versiones de dependencias
-└── README.md                 # Documentación del proyecto
+│   ├── assets/                 # Recursos estáticos (imágenes, íconos, etc.)
+│   │   ├── brilla.png
+│   │   └── user.png
+│   │
+│   ├── components/             # Componentes reutilizables
+│   │   ├── NotFoundPage.jsx
+│   │   ├── ProtectedRoute.jsx
+│   │   └── Spinner.jsx
+│   │
+│   ├── pages/                  # Vistas completas (pantallas principales)
+│   │   ├── AuxiliaresPage/
+│   │   │   ├── AuxiliaresPage.css
+│   │   │   └── AuxiliaresPage.js
+│   │   ├── DashboardPage/
+│   │   │   ├── DashboardPage.css
+│   │   │   └── DashboardPage.js
+│   │   ├── ForgotPasswordPage/
+│   │   │   ├── ForgotPasswordPage.css
+│   │   │   └── ForgotPasswordPage.js
+│   │   ├── LoginPage/
+│   │   │   ├── LoginPage.css
+│   │   │   └── LoginPage.js
+│   │   ├── RegisterPage/
+│   │   │   ├── RegisterPage.css
+│   │   │   └── RegisterPage.js
+│   │   ├── ResetPasswordPage/
+│   │   │   ├── ResetPasswordPage.css
+│   │   │   └── ResetPasswordPage.js
+│   │   └── Playground/          # Espacio para pruebas rápidas
+│   │       ├── readme.md
+│   │       ├── UseEffectPlay.js
+│   │       ├── UseRefPlay.js
+│   │       └── UseStatePlay.js
+│   │
+│   ├── utils/                  # Funciones y utilidades generales
+│   │   └── alerts.js
+│   │
+│   ├── App.css                 # Estilos globales de la app
+│   ├── App.js                  # Componente raíz
+│   ├── App.test.js             # Pruebas del componente raíz
+│   ├── firebase.js             # Configuración de Firebase
+│   ├── index.css               # Estilos del index
+│   ├── index.js                # Punto de entrada principal
+│   ├── logo.svg                # Logo SVG base
+│   ├── reportWebVitals.js      # Métricas de rendimiento
+│   └── setupTests.js           # Configuración de entorno de testing
+│
+├── .gitignore                  # Archivos y carpetas a ignorar por Git
+├── .firebase/                   # Configuración del proyecto Firebase
+├── firebase.json               # Configuración de Firebase Hosting
+├── firestore.indexes.json      # Índices de Firestore
+├── firestore.rules             # Reglas de seguridad de Firestore
+├── package.json                # Configuración y dependencias
+├── package-lock.json           # Bloqueo de versiones de dependencias
+└── README.md                   # Documentación del proyecto
 
 ```
----
-
-##  Avance del Proyecto
-
-| Nº  | Fecha       | Descripción / Entregable                              |
-|-----|-------------|-------------------------------------------------------|
-| 1   | 2025-08-15  | Creación del proyecto con Create-React-App             |
-| 2   | 2025-08-15  | Instalación y configuración de Bootstrap y SweetAlert2 |
-| 3   | 2025-08-21  | Instalación y creacion de las rutas                    |
-
-
----
