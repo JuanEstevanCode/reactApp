@@ -4,12 +4,12 @@ import { getFirestore } from "firebase/firestore";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCSoB5RsBrzriSfeRFqaVUfhKumJHLIMBA",
-    authDomain: "brillatlm.firebaseapp.com",
-    projectId: "brillatlm",
-    storageBucket: "brillatlm.firebasestorage.app",
-    messagingSenderId: "970081452395",
-    appId: "1:970081452395:web:5b44b77ca66fe4bf7f0c2e"
+  apiKey: "AIzaSyBpI2I0vNB0G2JPYU579tZ6D52ikdJzpeQ",
+  authDomain: "plataforma-react-819a1.firebaseapp.com",
+  projectId: "plataforma-react-819a1",
+  storageBucket: "plataforma-react-819a1.firebasestorage.app",
+  messagingSenderId: "605357703836",
+  appId: "1:605357703836:web:e736e6c476e67a2b6fe359"
 };
 
 // Inicializar Firebase
